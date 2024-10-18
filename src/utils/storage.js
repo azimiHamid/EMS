@@ -1,0 +1,248 @@
+const employees = [
+  {
+    id: 1,
+    email: "employee1@example.com",
+    password: "password1",
+    tasks: [
+      {
+        taskTitle: "Task 78",
+        taskDescription: "Design a UI mockup",
+        taskDate: "2024-10-18",
+        category: "Design",
+        active: true,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 23",
+        taskDescription: "Update website layout",
+        taskDate: "2024-10-19",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 47",
+        taskDescription: "Optimize code for performance",
+        taskDate: "2024-10-20",
+        category: "Development",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: true,
+      },
+    ],
+  },
+  {
+    id: 2,
+    email: "employee2@example.com",
+    password: "password2",
+    tasks: [
+      {
+        taskTitle: "Task 56",
+        taskDescription: "Create project documentation",
+        taskDate: "2024-10-18",
+        category: "Documentation",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 19",
+        taskDescription: "Conduct code review",
+        taskDate: "2024-10-21",
+        category: "Development",
+        active: true,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 32",
+        taskDescription: "Fix database issues",
+        taskDate: "2024-10-22",
+        category: "Development",
+        active: false,
+        newTask: true,
+        completed: false,
+        failed: true,
+      },
+      {
+        taskTitle: "Task 44",
+        taskDescription: "Test new features",
+        taskDate: "2024-10-23",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 3,
+    email: "employee3@example.com",
+    password: "password3",
+    tasks: [
+      {
+        taskTitle: "Task 8",
+        taskDescription: "Prepare project presentation",
+        taskDate: "2024-10-18",
+        category: "Presentation",
+        active: true,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 37",
+        taskDescription: "Deploy new application version",
+        taskDate: "2024-10-20",
+        category: "Deployment",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: true,
+      },
+      {
+        taskTitle: "Task 67",
+        taskDescription: "Analyze customer feedback",
+        taskDate: "2024-10-21",
+        category: "Analysis",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    email: "employee4@example.com",
+    password: "password4",
+    tasks: [
+      {
+        taskTitle: "Task 12",
+        taskDescription: "Refactor backend services",
+        taskDate: "2024-10-18",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 28",
+        taskDescription: "Improve API performance",
+        taskDate: "2024-10-19",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: true,
+      },
+      {
+        taskTitle: "Task 33",
+        taskDescription: "Collaborate with design team",
+        taskDate: "2024-10-20",
+        category: "Collaboration",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 59",
+        taskDescription: "Review PRs",
+        taskDate: "2024-10-21",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 90",
+        taskDescription: "Debug production issues",
+        taskDate: "2024-10-22",
+        category: "Development",
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+      },
+    ],
+  },
+  {
+    id: 5,
+    email: "employee5@example.com",
+    password: "password5",
+    tasks: [
+      {
+        taskTitle: "Task 42",
+        taskDescription: "Update server configurations",
+        taskDate: "2024-10-18",
+        category: "Infrastructure",
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: true,
+      },
+      {
+        taskTitle: "Task 11",
+        taskDescription: "Monitor system performance",
+        taskDate: "2024-10-19",
+        category: "Monitoring",
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 23",
+        taskDescription: "Set up CI/CD pipeline",
+        taskDate: "2024-10-20",
+        category: "Development",
+        active: true,
+        newTask: true,
+        completed: true,
+        failed: false,
+      },
+      {
+        taskTitle: "Task 76",
+        taskDescription: "Create automated tests",
+        taskDate: "2024-10-21",
+        category: "Testing",
+        active: false,
+        newTask: false,
+        completed: false,
+        failed: false,
+      },
+    ],
+  },
+];
+
+// Array of Adminssss
+const admin = [
+  {
+    id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setToLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+
+export const getFromLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees")) || [];
+  const admin = JSON.parse(localStorage.getItem("admin")) || null;
+
+  return { employees, admin };
+};
